@@ -25,7 +25,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-      uses: actions/upload-artifact@master
+    - uses: actions/upload-artifact@master
       with:
         name: webpack artifacts
         path: public/
@@ -47,13 +47,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-        with:
+    uses: actions/setup-node@v1
+    with:
           node-version: ${{ matrix.node-version}}
-    - name: npm install, npm test
-      run: |
+    name: npm install, npm test
+    run: |
         npm install
         npm test
-      CI: true
+   CI: true
             
 
