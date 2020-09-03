@@ -25,7 +25,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    
+      uses: actions/upload-artifact@master
+      with:
+        name: webpack artifacts
+        path: public/
+        
     - run: |
         npm install
         npm build
